@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Developer CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+
+    .cv-container {
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .left-column {
+      width: 30%;
+      background-color: #1e293b;
+      color: #fff;
+      padding: 30px 20px;
+    }
+
+    .right-column {
+      width: 70%;
+      padding: 30px 40px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    p, li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      color: #22d3ee;
+      margin-top: 20px;
+      border-bottom: 1px solid #22d3ee;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .contact-info p, .skills p {
+      margin-bottom: 5px;
+    }
+
+    .job {
+      margin-bottom: 20px;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+      }
+
+      .cv-container {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cv-container">
+  <!-- Left Column -->
+  <div class="left-column">
+    <img src="https://via.placeholder.com/120" alt="Profile Photo" class="profile-pic" />
+    <h2>Jhon Fredy</h2>
+    <p>Full Stack Web Developer</p>
+
+    <div class="section-title">Contact</div>
+    <div class="contact-info">
+      <p>Email: jhon@example.com</p>
+      <p>Phone: +57 300 000 0000</p>
+      <p>Location: Colombia</p>
+      <p>GitHub: github.com/jhonfredy</p>
+    </div>
+
+    <div class="section-title">Skills</div>
+    <div class="skills">
+      <p>HTML/CSS/JavaScript</p>
+      <p>Django / Python</p>
+      <p>Git & GitHub</p>
+      <p>SQL / PostgreSQL</p>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="right-column">
+    <h1>Currículum Vitae</h1>
+
+    <div class="section-title">Profile</div>
+    <p>Passionate and detail-oriented developer with a strong foundation in Django and modern web technologies. Eager to contribute to real-world projects and grow as a full stack developer.</p>
+
+    <div class="section-title">Experience</div>
+    <div class="job">
+      <h3>Freelance Web Developer</h3>
+      <p><strong>Remote</strong> – Jan 2024 to Present</p>
+      <ul>
+        <li>Developed full-stack web applications using Django, Tailwind, and PostgreSQL.</li>
+        <li>Collaborated with clients to gather requirements and deliver responsive, functional solutions.</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Education</div>
+    <p><strong>Self-Taught Developer</strong></p>
+    <p>Completed multiple online courses including Django, Git, JavaScript, and Front-End Development.</p>
+
+    <div class="section-title">Projects</div>
+    <ul>
+      <li><strong>Hotel Booking Platform:</strong> A Django-based site with reservation system, user login, availability handling, and email confirmation.</li>
+      <li><strong>Birdwatching Travel Agency:</strong> Responsive website with photo galleries and category filtering for bird species.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

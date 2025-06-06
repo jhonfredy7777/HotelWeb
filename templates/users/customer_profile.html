@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Customer Profile {% endblock %}
+
+
+{% block content %}
+<main class="main left-[15%] w-[80%]">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md mt-10 ">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">My Profile <span class="invisible">Texto invisible</span> </h2>
+    
+        <div class="flex items-center justify-between">
+            <div class="mb-4">
+                <label class="block font-medium text-gray-700">Full Name:</label>
+                <p class="text-gray-900">{{ customer.user.username }}</p>
+            </div>
+        
+            <div class="mb-4">
+                <label class="block font-medium text-gray-700">Email:</label>
+                <p class="text-gray-900">{{ customer.email }}</p>
+            </div>
+        
+            <div class="flex justify-between items-center mt-8">
+                <a href="{% url 'Customer_reservations' %}" class="bg-blue-600 mb-7 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">
+                    View My Reservations
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Room Details {% endblock %}
+
+{% block content  %}
+<main class="main-room_detail">
+    <div class=" container max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Room N-{{ room.number }} Details</h1>
+    
+        <!-- 🔹 Image Gallery with Lightbox -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {% if room.bedroom %}
+                <a href="{{ room.bedroom.url }}" data-fancybox="gallery" data-title="Bedroom">
+                    <img src="{{ room.bedroom.url }}" alt="Bedroom" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition-transform">
+                </a>
+            {% endif %}
+            {% if room.livingroom %}
+                <a href="{{ room.livingroom.url }}" data-fancybox="gallery" data-title="Livingroom">
+                    <img src="{{ room.livingroom.url }}" alt="Livingroom" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition-transform">
+                </a>
+            {% endif %}
+            {% if room.kitchen %}
+                <a href="{{ room.kitchen.url }}" data-fancybox="gallery" data-title="Kitchen">
+                    <img src="{{ room.kitchen.url }}" alt="Kitchen" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition-transform">
+                </a>
+            {% endif %}
+            {% if room.bathroom %}
+                <a href="{{ room.bathroom.url }}" data-fancybox="gallery" data-title="Bathroom">
+                    <img src="{{ room.bathroom.url }}" alt="Bathroom" class="w-full h-40 object-cover rounded-lg shadow-md hover:scale-105 transition-transform">
+                </a>
+            {% endif %}
+        </div>
+
+{% if messages %}
+    <div class="mt-5">
+        {% for message in messages %}
+            <div 
+                class="bg-green-500 text-white text-lg p-4 rounded-md shadow-md relative group transition-opacity duration-500 text-center"
+                x-data="{ show: true }"
+                x-show="show"
+            >
+                {{ message }}
+                <!-- close button (on hover) -->
+                <button 
+                    class="absolute top-1 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    @click="show = false"
+                >
+                    ✖
+                </button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+    
+        <!-- 🔹 Room Information -->
+        <div class="mt-6">
+            <p class="text-gray-600"><strong>Category:</strong> {{ room.category }}</p>
+            <p class="text-gray-600"><strong>Price:</strong> ${{ room.price }}</p>
+            <p class="text-gray-600"><strong>Nunber of Beds:</strong> {{ room.beds }}</p>
+            <p class="text-gray-600"><strong>Available:</strong> {% if room.available %} ✅ Yes {% else %} ❌ No {% endif %}</p>
+        </div>
+    
+        <!-- Buttons -->
+        <div class="mt-6 flex space-x-4">
+            <a href="{% url 'Book_room_free' room.number %}" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Book for Free</a>
+            <a href="{% url 'Book_room' room.number %}" class="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Book and Pay</a>
+            <a href="{% url 'Rooms' %}" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700">Go Back</a>
+        </div>
+    </div>
+</main>
+{% endblock %}
+

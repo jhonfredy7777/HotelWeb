@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Customer Reservations {% endblock %}
+
+
+{% block content %}
+<main class="main w-full left-0 z-20 bg-white">
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-8 mt-20z">These are your reservations</h1>
+  <div class="grid md:grid-cols-3 gap-20">
+    {% for reservation in reservations %}
+    <div class="relative group bg-white rounded-xl shadow-md overflow-hidden m-2">
+      <!-- Image of the room (bedroom) -->
+      <img src="{{ reservation.room.bedroom.url }}" alt="Room {{ reservation.room.number }}" class="w-full h-64 object-cover">
+      <p class="ml-1"><strong>Room:</strong> {{ reservation.room.number }}</p>
+      <p class="ml-1"><strong>Date:</strong> {{ reservation.date }}</p>
+      <p class="ml-1 mb-2"><strong>Status:</strong> {{ reservation.status }}</p>
+      <div class="flex items-center justify-between  mr-4">
+      <!-- see room details -->
+      <a href="{% url 'Room_detail' reservation.room.number %}" class="bg-green-600 text-white mb-2 px-3 py-1 rounded-md hover:bg-green-700">&nbsp;&nbsp;&nbsp;See Full Room &nbsp;&nbsp;&nbsp;</a>
+
+  
+      {% if  reservation.status != 'cancelled' %}
+        <a href="{% url 'Cancel_reservation' reservation.res_code %}" class="bg-red-600 mb-2 text-white px-3 py-1 rounded-md hover:bg-red-700">
+          Cancel Reservation
+        </a>
+      {% elif reservation.status == 'cancelled' %}
+        <span class="text-gray-500 mb-2">Reservation Cancelled</span>
+      {% else %}
+        <span class="text-gray-500 mb-2">Cannot cancel past reservation</span>
+      {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+
+</main>
+
+{% endblock %}

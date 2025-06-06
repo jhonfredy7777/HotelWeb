@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Authentication {% endblock %}
+
+{% load tailwind_filters %}
+
+{% block content  %}
+<main class=" main left-[25%] w-[50%] " >
+    <form method="post" action=" {% url 'Authentication'  %} ">
+        {% csrf_token %}
+    
+        {{form|crispy}}
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md mb-2 hover:bg-green-700">Register</button>
+    </form>
+</main>
+{% endblock %}

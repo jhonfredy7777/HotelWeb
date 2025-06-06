@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Activities {% endblock %}
+
+{% block content  %}
+<main class="main left-0 z-10 w-[100%] bg-white" >
+<div class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Discover Our Top Activities</h2>
+
+  <!-- Activity 1 -->
+  <div class="flex gap-2 flex-col md:flex-row items-center mb-12 bg-white shadow-lg rounded-lg overflow-hidden">
+    <img src="{% static 'img/pool_relaxation.webp' %}" alt="Relaxing at the pool" class="md:w-1/2 w-full h-64 object-cover">
+    <div class="p-6  md:w-1/2">
+      <h3 class="text-2xl font-semibold text-teal-600 mb-2">Relax at the Pool</h3>
+      <p class="text-gray-700 text-lg">
+        Enjoy a peaceful day at our beautiful pool area. Soak up the sun in a comfortable lounge chair, order refreshing cocktails from our poolside bar, and unwind in a serene environment.
+      </p>
+    </div>
+  </div>
+
+  <!-- Activity 2 -->
+  <div class="flex flex-col md:flex-row-reverse items-center mb-12 bg-white shadow-lg rounded-lg overflow-hidden">
+    <img src="{% static 'img/beach_activities.webp' %}" alt="Beach activities" class="md:w-1/2 w-full h-64 object-cover">
+    <div class="p-6 md:w-1/2">
+      <h3 class="text-2xl font-semibold text-blue-600 mb-2">Relax & Play at the Beach</h3>
+      <p class="text-gray-700 text-lg">
+        Just steps away from the hotel, the beach offers the perfect spot to sunbathe, swim, or enjoy exciting water activities like kayaking and paddleboarding. Let the sea breeze refresh your soul.
+      </p>
+    </div>
+  </div>
+
+  <!-- Activity 3 -->
+  <div class="flex flex-col md:flex-row items-center mb-12 bg-white shadow-lg rounded-lg overflow-hidden">
+    <img src="{% static 'img/beach_sports.jpg' %}" alt="Beach sports" class="md:w-1/2 w-full h-64 object-cover">
+    <div class="p-6 md:w-1/2">
+      <h3 class="text-2xl font-semibold text-orange-600 mb-2">Beach Sports & Fun</h3>
+      <p class="text-gray-700 text-lg">
+        Join others for a friendly game of beach volleyball or soccer on our soft sand courts. Other beach games and team sports are available for guests of all ages to stay active and have fun!
+      </p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+{% endblock %}

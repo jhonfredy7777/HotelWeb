@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} About Us {% endblock %}
+
+{% block content  %}
+<main class="main  w-[100%] left-0 z-10">
+    <section class="bg-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl font-bold text-gray-800 mb-4">About Us</h1>
+          <p class="text-lg text-gray-600 mb-8">
+            Welcome to our company! We are dedicated to offering the best vacation experiences in our beautiful beachfront hotel. Our goal is to make your stay unforgettable.
+          </p>
+      
+          <div class="grid md:grid-cols-2 gap-8 text-left">
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 mb-2">Our Mission</h2>
+              <p class="text-gray-600">
+                We strive to provide top-quality hospitality services by putting our guests first. Every detail is carefully planned so you can relax and enjoy the experience.
+              </p>
+            </div>
+      
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 mb-2">Our Experience</h2>
+              <p class="text-gray-600">
+                With over 10 years in the tourism and hospitality industry, we’ve hosted thousands of happy guests. Our team is passionate, professional, and always ready to help.
+              </p>
+            </div>
+      
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 mb-2">Customer First</h2>
+              <p class="text-gray-600">
+                We listen to our customers and constantly improve based on feedback. Your satisfaction is our success, and we’re always here to support you.
+              </p>
+            </div>
+      
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-700 mb-2">Our Location</h2>
+              <p class="text-gray-600">
+                Located just steps away from the Caribbean coast, our hotel combines luxury with natural beauty. Enjoy the sounds of the sea and the comfort of our facilities.
+              </p>
+            </div>
+          </div>
+      
+          <div class="mt-12">
+            <a href="{% url 'Contact' %}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+</main>
+{% endblock %}

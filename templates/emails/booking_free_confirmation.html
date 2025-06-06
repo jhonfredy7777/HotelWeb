@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Reservation Confirmed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .button {
+            background-color: #00b894;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #2d89ef;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Reservation was Confirmed</h2>
+
+        <img src="{% static 'img/banner.jpg' %}" alt="Hotel" class="img-banner">
+        
+        <p>Hello {{ full_name }},</p>
+
+        <p>Thank you for your reservation at <strong>SolyMar Hotel</strong>. Here are your reservation details:</p>
+
+        <ul>
+            <li><strong>Room:</strong> {{ room.number }} ({{ room.category }})</li>
+            <li><strong>Price per night:</strong> ${{ room.price }}</li>
+            <li><strong>Date:</strong> {{ date }}</li>
+            <li><strong>Time:</strong> {{ time }}</li>
+        </ul>
+
+        <p>Just remember to make the payment before the arrival date if possible or if you prefer, during the check-in process. We look forward to hosting you!</p>
+
+        <p>You can check the details or cancel your reservation by clicking on the following button:</p>
+        <a href="#" class="button">See my reservation</a>
+
+        <div class="footer">
+            This is an automated message. Please do not reply.
+        </div>
+    </div>
+</body>
+</html>

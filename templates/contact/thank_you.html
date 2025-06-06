@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Thank You {% endblock %}
+
+
+{% block content %}
+<main class="main w-[90%] top-[5%] ">
+
+    <div class="max-w-xl mx-auto text-center mt-20 p-6 bg-white rounded-lg shadow-md ">
+    <!-- Lottie animation -->
+    <div class="w-48 h-48 mx-auto mb-2">
+        <lottie-player 
+            src="https://assets5.lottiefiles.com/packages/lf20_jbrw3hcz.json" 
+            background="transparent" 
+            speed="1"  
+            loop 
+            autoplay>
+        </lottie-player>
+    </div>
+        <h1 class="text-3xl font-bold text-green-600 mb-4">Thank You!</h1>
+        <p class="text-gray-700 text-lg mb-6">
+            Your message has been successfully sent. We appreciate you reaching out to us.
+        </p>
+        <p class="text-gray-600 mb-6">
+            Our team will get back to you as soon as possible. If your inquiry is urgent, please feel free to call us directly.
+        </p>
+        <a href="{% url 'Home' %}" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition duration-300">
+            Back to Home
+        </a>
+    </div>
+
+</main>
+<!-- Lottie script -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+{% endblock %}

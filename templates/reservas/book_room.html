@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Book Room {% endblock %}
+
+{% block content  %}
+<main class="main-book_room">
+    <div class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Book Room N-{{ room.number }}</h1>
+    
+        <p class="text-gray-600"><strong>Category:</strong> {{ room.category }}</p>
+        <p class="text-gray-600"><strong>Price:</strong> ${{ room.price }}</p>
+    
+    <!-- Messages -->
+    {% if messages %}
+    <div class="mt-5">
+        {% for message in messages %}
+            <div 
+            class="bg-white text-red-600 border border-red-300 px-4 py-2 rounded shadow-md text-center"
+                
+            >
+                {{ message }}
+                
+                
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endif %}
+<!-- Booking process -->
+        <form method="POST" action="{% url 'Book_room' room.number  %}">
+            {% csrf_token %}
+    
+            <div class="mb-4 mt-10">
+                <label class="block text-gray-700">Full Name:</label>
+                <input type="text" name="full_name" class="w-full p-2 border rounded-md" value="{{ form_data.full_name|default:'' }}" required>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700">E-mail:</label>
+                <input type="email" name="email" class="w-full p-2 border rounded-md" value="{{ form_data.email|default:'' }}" required>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700">Date:</label>
+                <input type="date" name="date" class="w-full p-2 border rounded-md" value="{{ form_data.date|default:'' }}" required>
+            </div>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700">Time:</label>
+                <input type="time" name="time" class="w-full p-2 border rounded-md" value="{{ form_data.time|default:'06:00' }}" required>
+            </div>
+    
+            <!-- 🔹 Sección de Pago -->
+            <h2 class="text-xl font-semibold mt-6">Payment Method</h2>
+    
+            <div class="mb-4">
+                <label class="block text-gray-700">Card Number:</label>
+                <input type="text" name="card_number" class="w-full p-2 border rounded-md" placeholder="XXXX-XXXX-XXXX-XXXX"  maxlength="16" value="{{ form_data.card_number|default:'' }}" required>
+            </div>
+    
+            <div class="mb-4 flex space-x-4">
+                <div>
+                    <label class="block text-gray-700">Expiration Date:</label>
+                    <input type="text" name="exp_date" class="p-2 border rounded-md" placeholder="MM/AA" value="{{ form_data.exp_date|default:'' }}" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700">CVV:</label>
+                    <input type="text" name="cvv" class="p-2 border rounded-md" placeholder="XXX" value="{{ form_data.cvv|default:'' }}" required>
+                </div>
+            </div>
+    
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 w-full mt-4">
+                Confirm Reservation
+            </button>
+        </form>
+    
+        <a href="{% url 'Room_detail' room.number  %}" class="block text-center text-blue-500 mt-4 hover:underline">Go Back</a>
+    </div>
+</main>
+{% endblock %}

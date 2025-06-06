@@ -1,0 +1,89 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %} Rooms list {% endblock %}
+
+{% block content  %}
+
+<main class="main bg-white w-full left-0 z-20">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8 mt-20z">What we've got for you</h1>
+
+    <!-- Filters -->
+    <form method="GET" class="mb-6 flex flex-wrap gap-4 justify-center">
+        <label for="search" class="text-gray-700 font-medium flex items-center ">Search room(by number):</label>
+        <input type="text" name="search" id="search"  placeholder="{{ search_query|default:'Search room' }}"  class="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <select name="category" class="p-2 border rounded-md">
+            <option value="">All categories</option>
+            <option value="standard" {% if category_filter == "standard" %}selected{% endif %}>Standard</option>
+            <option value="deluxe" {% if category_filter == "deluxe" %}selected{% endif %}>Deluxe</option>
+            <option value="suite" {% if category_filter == "suite" %}selected{% endif %}>Suite</option>
+        </select>
+
+        <select name="available" class="p-2 border rounded-md">
+            <option value="">Availability</option>
+            <option value="true" {% if available_filter == "true" %}selected{% endif %}>available</option>
+            <option value="false" {% if available_filter == "false" %}selected{% endif %}>Occupied</option>
+        </select>
+
+        <select name="sort_by"  class="p-2 border rounded-md">
+            <option value="number" {% if sort_by == "number" %}selected{% endif %}>Order by Number</option>
+            <option value="price" {% if sort_by == "price" %}selected{% endif %}>Order by Price</option>
+        </select>
+
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md">Search</button>
+    </form>
+
+    <div class="grid md:grid-cols-3 gap-20 m-2">
+        {% for room in page_obj %}
+        <div class="relative group bg-white rounded-xl shadow-md overflow-hidden">
+            <!-- Image of the room (bedroom) -->
+            <img src="{{ room.bedroom.url }}" alt="Room {{ room.number }}" class="w-full h-64 object-cover">
+            
+            <!-- Bottons (appear in hover ) -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <a href="{% url 'Book_room_free' room.number %}" class="bg-green-600 text-white px-4 py-2 rounded-md mb-2 hover:bg-green-700">Book for Free</a>
+                <a href="{% url 'Book_room' room.number %}" class="bg-orange-600 text-white px-4 py-2 rounded-md mb-2 hover:bg-orange-700">Book and Pay</a>
+                <a href="{% url 'Room_detail' room.number %}" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">See full room</a>
+            </div>
+
+            <!-- Room information -->
+            <div class="p-4">
+                <h2 class="text-xl font-semibold text-gray-800">Room {{ room.number }}</h2>
+                <p class="text-gray-600">{{ room.get_category_display }}</p>
+                <p class="text-gray-900 font-bold">${{ room.price }} / night</p>
+            </div>
+        </div>
+        {% empty %}
+            <p class="text-center text-gray-600">There are no rooms available right now.</p>
+        {% endfor %}
+    </div>
+
+    <div class="flex justify-center mt-6">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">First</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Previous</a>
+        {% endif %}
+    
+        <span class="mx-2 px-4 py-2 bg-blue-600 text-white rounded">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+    
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Last</a>
+        {% endif %}
+    </div>
+
+</main>
+<!-- <div class="flex justify-center mt-6">
+    {% if page_obj.has_previous %}
+        <a href="?page=1{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Previous</a>
+    {% endif %}
+
+    <span class="mx-2 px-4 py-2 bg-blue-600 text-white rounded">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">Last</a>
+    {% endif %}
+</div> -->
+{% endblock %}

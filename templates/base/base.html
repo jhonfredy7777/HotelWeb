@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} {% endblock %}</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="{% static 'css/base/styles.css' %}">
+    <!-- fonts  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<!-- tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fancybox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+
+<!-- Alpine.js -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
+
+</head>
+
+<body>
+    
+        <header class="header">
+            <nav class="navbar" x-data="{ open: false }" :class="{ 'z-50': open }">
+                <div class="logo">
+                    <span>solymar</span>
+                </div>
+                <ul class="links">
+                    <li class="link {% if request.path == '/' %} active {% endif %}">
+                        <a href="{% url 'Home' %}">home</a>
+                    </li>
+                    <li class="link {% if request.path == '/rooms/' %} active {% endif %}" >
+                        <a href="{% url 'Rooms' %}">rooms</a>
+                    </li>
+                    <li class="link {% if request.path == '/about_us/' %} active {% endif %}">
+                        <a href="{% url 'About_us' %}">About us</a>
+                    </li>
+                    <li class="link {% if request.path == '/activities/' %} active {% endif %}">
+                        <a href="{% url 'Activities' %}">Activities</a>
+                    </li>
+                    <li class="link {% if request.path == '/contact/' %} active {% endif %}">
+                        <a href="{% url 'Contact' %}">contact</a>
+                    </li>
+                    <li class="link ">
+                        <div class="relative">
+                            {% if user.is_authenticated %}
+                            <!-- group controlled by Alpine -->
+                              <div class="group inline-block relative "                
+                                   @mouseenter="open = true"
+                                   @mouseleave="open = false">
+                                <button class="flex items-center focus:outline-none">
+                                  <span class="mr-2">Profile:&nbsp;&nbsp; {{ user.username }}</span>
+                                  <svg class="h-4 w-4 fill-current " viewBox="0 0 20 20">
+                                    <path d="M5.516 7.548L10 12.032l4.484-4.484L16 8.548 10 14.548 4 8.548z" />
+                                  </svg>
+                                </button>
+                                <ul class="absolute hidden text-gray-800 pt-2 group-hover:block bg-white rounded shadow-lg min-w-[160px] z-50">
+                                  <li><a href="{% url 'Customer_profile' %}" class="block px-4 py-2 hover:bg-orange-600">My profile</a></li>
+                                  <li><a href="{% url 'Customer_reservations' %}" class="block px-4 py-2 hover:bg-orange-600">My reservations</a></li>
+                                  <li><a href="{% url 'Logout' %}" class="block px-4 py-2 hover:bg-orange-600 ">log out</a></li>
+                                </ul>
+                              </div>
+                            {% else %}
+                              <a href="{% url 'Login' %}" class="hover:underline mr-4"><span>log in</span></a>
+                              <a href="{% url 'Authentication' %}" class="hover:underline"><span>register</span></a>
+                            {% endif %}
+                          </div>
+                    </li>
+                    
+                </ul>
+            </nav>
+
+    
+        </header>
+
+
+<!-- dynamic-content -->
+{% block content %}
+
+{% endblock %}
+
+
+
+
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/bd630b8876.js" crossorigin="anonymous"></script>
+<!-- my_own js -->
+<script src="{% static 'js/rooms.js' %}"></script>
+
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        Fancybox.bind("[data-fancybox='gallery']", {
+            Toolbar: {
+                display: [
+                    "zoom",         
+                    "fullscreen",   
+                    "download",     // Download image
+                    "close"         // Close gallery
+                ],
+            },
+        });
+    });
+</script>
+
+<footer class="bg-gradient-to-tr from-teal-700 via-cyan-600 to-emerald-600 text-white mt-0">
+  <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-10">
+
+    <!-- Logo & Description -->
+    <div>
+      <h2 class="text-3xl font-bold mb-3 tracking-wider ml-20" style="font-family: 'Yesteryear', cursive;">Sol y Mar</h2>
+      <p class="text-sm leading-relaxed">
+        Where the sun kisses the ocean and your soul finds peace.
+      </p>
+    </div>
+
+<!-- Quick Links -->
+<div>
+  <h3 class="text-xl font-semibold mb-4 border-b border-white inline-block pb-1 ml-40">Quick Links</h3>
+  <div class="flex flex-wrap gap-6 text-lg">
+    <a href="{% url 'Home' %}" class="flex items-center space-x-2 hover:text-yellow-300 transition">
+      <span class="text-2xl">🏝️</span><span>Home</span>
+    </a>
+    <a href="{% url 'Rooms' %}" class="flex items-center space-x-2 hover:text-yellow-300 transition">
+      <span class="text-2xl">🛏️</span><span>Rooms</span>
+    </a>
+    <a href="{% url 'Activities' %}" class="flex items-center space-x-2 hover:text-yellow-300 transition">
+      <span class="text-2xl">🏄</span><span>Activities</span>
+    </a>
+    <a href="{% url 'Contact' %}" class="flex items-center space-x-2 hover:text-yellow-300 transition">
+      <span class="text-2xl">📞</span><span>Contact</span>
+    </a>
+  </div>
+</div>
+
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4 border-b border-white inline-block pb-1 ml-5">Connect with Us</h3>
+      <div class="flex space-x-4 text-lg">
+        <a href="#" class="hover:text-yellow-300 transition" aria-label="Facebook">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="#" class="hover:text-yellow-300 transition" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="hover:text-yellow-300 transition" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="hover:text-yellow-300 transition" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <!-- <p class="text-sm mt-4">We love hearing from our guests.</p> -->
+    </div>
+  </div>
+
+  <!-- Bottom Line -->
+  <div class="text-center text-sm text-teal-100 border-t border-white/30 py-4">
+    &copy; {% now "Y" %} Sol y Mar Hotel. All rights reserved.
+  </div>
+</footer>
+
+
+
+</body>
+</html>
