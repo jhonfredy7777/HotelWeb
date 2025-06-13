@@ -31,6 +31,10 @@ class VRegister(View):
         else:
             for error in form.error_messages:
                 messages.error(request,form.error_messages[error])
+             # study and try the subgestion by chatgpt   
+             # for field, errors in form.errors.items():
+             #    for error in errors:
+             #       messages.error(request, f"{field.capitalize()}: {error}")
 
             return render(request,'users/authentication.html',{"form":form})    
 

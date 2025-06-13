@@ -6,12 +6,13 @@
 {% load tailwind_filters %}
 
 {% block content  %}
-<main class=" main left-[25%] w-[50%] " >
+<div class=" mx-auto w-[50%] mt-5 label-color" >
+    <h1 class="text-2xl font-bold text-green-800 mb-10">Log into your account</h1>
     <form method="post" action=" {% url 'Login'  %} ">
         {% csrf_token %}
     
         {{form|crispy}}
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-md mb-2 hover:bg-green-700">Log in</button>
+        <button type="submit" class="block mx-auto bg-green-600 text-white px-4 py-2 rounded-md mb-2 hover:bg-green-700 ">Log in</button>
     </form>
     {% if messages %}
     <div class="mt-5">
@@ -27,5 +28,5 @@
         {% endfor %}
     </div>
 {% endif %}
-</main>
+</div>
 {% endblock %}

@@ -29,7 +29,8 @@
 
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
+  
     
         <header class="header">
             <nav class="navbar" x-data="{ open: false }" :class="{ 'z-50': open }">
@@ -86,37 +87,13 @@
 
 
 <!-- dynamic-content -->
-{% block content %}
+<main class="flex-grow ">
+  {% block content %}
+  {% endblock %}
+</main>
 
-{% endblock %}
 
-
-
-
-<!-- fontawesome -->
-<script src="https://kit.fontawesome.com/bd630b8876.js" crossorigin="anonymous"></script>
-<!-- my_own js -->
-<script src="{% static 'js/rooms.js' %}"></script>
-
-<!-- Fancybox JS -->
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        Fancybox.bind("[data-fancybox='gallery']", {
-            Toolbar: {
-                display: [
-                    "zoom",         
-                    "fullscreen",   
-                    "download",     // Download image
-                    "close"         // Close gallery
-                ],
-            },
-        });
-    });
-</script>
-
-<footer class="bg-gradient-to-tr from-teal-700 via-cyan-600 to-emerald-600 text-white mt-0">
+<footer class="bg-gradient-to-tr from-teal-700 via-cyan-600 to-emerald-600 text-white mt-0 ">
   <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-10">
 
     <!-- Logo & Description -->
@@ -174,7 +151,27 @@
   </div>
 </footer>
 
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/bd630b8876.js" crossorigin="anonymous"></script>
+<!-- my_own js -->
+<script src="{% static 'js/rooms.js' %}"></script>
 
+<!-- Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        Fancybox.bind("[data-fancybox='gallery']", {
+            Toolbar: {
+                display: [
+                    "zoom",         
+                    "fullscreen",   
+                    "download",     // Download image
+                    "close"         // Close gallery
+                ],
+            },
+        });
+    });
+</script>
 </body>
 </html>
