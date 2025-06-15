@@ -5,7 +5,7 @@
 
 {% block content  %}
 
-<main class="main bg-white w-full left-0 z-20">
+<div class=" bg-white w-full ">
     <h1 class="text-3xl font-bold text-center text-gray-800 mb-8 mt-20z">What we've got for you</h1>
 
     <!-- Filters -->
@@ -35,7 +35,7 @@
 
     <div class="grid md:grid-cols-3 gap-20 m-2">
         {% for room in page_obj %}
-        <div class="relative group bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="relative group bg-blue-400 rounded-xl shadow-md overflow-hidden">
             <!-- Image of the room (bedroom) -->
             <img src="{{ room.bedroom.url }}" alt="Room {{ room.number }}" class="w-full h-64 object-cover">
             
@@ -72,7 +72,7 @@
         {% endif %}
     </div>
 
-</main>
+</div>
 <!-- <div class="flex justify-center mt-6">
     {% if page_obj.has_previous %}
         <a href="?page=1{% if category_filter %}&category={{ category_filter }}{% endif %}{% if available_filter %}&available={{ available_filter }}{% endif %}" class="mx-1 px-4 py-2 bg-gray-300 rounded">First</a>

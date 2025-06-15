@@ -46,7 +46,7 @@ def rooms_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'reservas/rooms_list.html', {
+    return render(request, 'reservation/rooms_list.html', {
         'page_obj': page_obj,
         'category_filter': category_filter,
         'available_filter': available_filter,
@@ -57,7 +57,7 @@ def rooms_list(request):
 
 def room_detail(request,number):
     room = get_object_or_404(Room, number=number)
-    return render(request,'reservas/room_detail.html',{'room': room})
+    return render(request,'reservation/room_detail.html',{'room': room})
 
 @login_required
 def book_room(request,number):
@@ -79,7 +79,7 @@ def book_room(request,number):
         # basic Validations
         if not full_name or not email or not date or not time or not card_number or not exp_date or not cvv:
             messages.error(request, "All fields are required.")
-            return render(request, 'reservas/book_room.html', {
+            return render(request, 'reservation/book_room.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -98,7 +98,7 @@ def book_room(request,number):
             validate_email(email)
         except ValidationError:
             messages.error(request, "Email is not valid.")
-            return render(request, 'reservas/book_room.html', {
+            return render(request, 'reservation/book_room.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -115,7 +115,7 @@ def book_room(request,number):
         # Validate card number
         if not card_number.isdigit() or len(card_number) not in [13, 16]:
             messages.error(request, "Card number no valid.")
-            return render(request, 'reservas/book_room.html', {
+            return render(request, 'reservation/book_room.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -131,7 +131,7 @@ def book_room(request,number):
 
         if not cvv.isdigit() or len(cvv) not in [3, 4]:
             messages.error(request, "CVV code no valid.")
-            return render(request, 'reservas/book_room.html', {
+            return render(request, 'reservation/book_room.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -182,7 +182,7 @@ Thank you!
         msg.send()
         messages.success(request, "You're playment was received. Room booked successfully. Check your email, we sent all the information there.")
         return redirect("Room_detail", number) 
-    return render(request,'reservas/book_room.html',{'room': room})
+    return render(request,'reservation/book_room.html',{'room': room})
 
 
 @login_required
@@ -201,7 +201,7 @@ def book_room_free(request,number):
         # basic Validations
         if not full_name or not email or not date or not time :
             messages.error(request, "All fields are required.")
-            return render(request, 'reservas/book_room_free.html', {
+            return render(request, 'reservation/book_room_free.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -216,7 +216,7 @@ def book_room_free(request,number):
             validate_email(email)
         except ValidationError:
             messages.error(request, "Email is not valid.")
-            return render(request, 'reservas/book_room_free.html', {
+            return render(request, 'reservation/book_room_free.html', {
     'room': room,
     'form_data': {
         'full_name': full_name,
@@ -263,7 +263,7 @@ Thank you!
         msg.send()
         messages.success(request, "Room booked successfully. Check your email, we sent all the information there.")
         return redirect("Room_detail", number)
-    return render(request,'reservas/book_room_free.html',{'room': room})
+    return render(request,'reservation/book_room_free.html',{'room': room})
 
 @login_required
 def cancel_reservation(request, code):
@@ -308,14 +308,14 @@ Thank you. We look forward to host you again!
 
 
 
-@login_required
-def make_reservation(request):
-    if request.method == "POST":
-        date = request.POST.get("date")
-        time = request.POST.get("time")
-        Reservation.objects.create(user=request.user, date=date, time=time, state="Pending")
-        return JsonResponse({"message": "Reservation created succesfully"}, status=200)
-    return render(request, "reservas/make_reservation.html")
+# @login_required
+# def make_reservation(request):
+#     if request.method == "POST":
+#         date = request.POST.get("date")
+#         time = request.POST.get("time")
+#         Reservation.objects.create(user=request.user, date=date, time=time, state="Pending")
+#         return JsonResponse({"message": "Reservation created succesfully"}, status=200)
+#     return render(request, "reservas/make_reservation.html")
 
 def about_us(request):
     return render(request,"about_us.html",{})

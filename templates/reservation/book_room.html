@@ -4,7 +4,7 @@
 {% block title %} Book Room {% endblock %}
 
 {% block content  %}
-<main class="main-book_room">
+<div class="mx-auto w-[40%] mb-6">
     <div class="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Book Room N-{{ room.number }}</h1>
     
@@ -77,5 +77,5 @@
     
         <a href="{% url 'Room_detail' room.number  %}" class="block text-center text-blue-500 mt-4 hover:underline">Go Back</a>
     </div>
-</main>
+</div>
 {% endblock %}
