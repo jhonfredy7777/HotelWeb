@@ -160,7 +160,7 @@ body{
 }
 
 .button a:hover{
-  background: linear-gradient(to right, #16a34a, #d5d823);
+  background: linear-gradient(to right, #169aa3, #d5d823);
   color: #fff;
 }
 .button a {

@@ -1,6 +1,6 @@
-#  Sol y Mar - Web App for Hotel Reservations
+#  Web App for Hotel Reservations
 
-Web application developed with Django to manage reservations, rooms, and guests at a beach resort hotel. It offers a simple interface for users and an efficient administrative dashboard for staff.
+Web application developed with Django to manage reservations, rooms, and guests at a beach resort hotel. It offers a simple interface for users and an efficient admin dashboard for the staff.
 
 The project was practically finished when I decided to make a repository and work with git. That means that the first commits will contain the majority of my work. The main focus now will be to improve the base.html layout so that the footer is not covered by the content in the header.
 
@@ -8,12 +8,12 @@ The project was practically finished when I decided to make a repository and wor
 
 ## 🚀 Characteristics
 
-- User registration and authentication
-- Reservations with availability validation
-- Administration panel with reservation, customer and room management
-- Sending of confirmation emails
-- Modern interface with Tailwind CSS and Crispy Forms
-- Gallery management with 
+- User registration and authentication.
+- Reservations with availability validation.
+- Administration panel with reservation, customer and room management.
+- Sending of confirmation emails.
+- Modern interface with Tailwind CSS and Crispy Forms.
+- Gallery management with fancybox.
 
 ---
 
@@ -33,12 +33,14 @@ The project was practically finished when I decided to make a repository and wor
 1. Clone this repository:
    ```bash
    git clone https://github.com/tuusuario/sol-y-mar.git
-   cd sol-y-mar
+   cd hotelwebsite
 
 2. Create and activate a virtual environtment:
    python -m venv env
    env\Scripts\activate      # On Windows
    source env/bin/activate  # On Linux/Mac
+   .\env\Scripts\Activate.ps1 # On Powershell (if scripts execution permits in Powershell are needed,     execute: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser , accept with S and press Enter )
+
 
 3. Install dependencies:
    pip install -r requirements.txt
@@ -49,6 +51,20 @@ The project was practically finished when I decided to make a repository and wor
 
 5. Access in your browser:
    http://127.0.0.1:8000/
+
+---
+## 📸 Screenshots
+![HomePage](screenshots/home.png)
+![Rooms](screenshots/rooms.png)
+![Room Details](screenshots/room_details.png)
+![Reservation Page](screenshots/book.png)
+
+## Usage
+Run the website (python manage.py runserver), go to your local host `http://127.0.0.1:8000/` and create all the reservations you want. Play with it.
+
+## Contributions
+Contributions are welcome! Open an issue or make a pull request.
+
 
 ## 📄 Licence
 MIT © 2025 Jhon Fredy

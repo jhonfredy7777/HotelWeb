@@ -8,7 +8,7 @@
     <div class=" container max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
         <h1 class="text-3xl font-bold text-gray-800 mb-6">Room N-{{ room.number }} Details</h1>
     
-        <!-- 🔹 Image Gallery with Lightbox -->
+        <!-- 🔹 Image Gallery with fancybox -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             {% if room.bedroom %}
                 <a href="{{ room.bedroom.url }}" data-fancybox="gallery" data-title="Bedroom">
