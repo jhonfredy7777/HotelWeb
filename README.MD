@@ -31,25 +31,38 @@ The project was practically finished when I decided to make a repository and wor
 ## ⚙️ Instalation
 
 1. Clone this repository:
-   ```bash
-   git clone https://github.com/tuusuario/sol-y-mar.git
-   cd hotelwebsite
+   
+   git clone https://github.com/jhonfredy7777/HotelWeb.git
+   
 
 2. Create and activate a virtual environtment:
    python -m venv env
+
    env\Scripts\activate      # On Windows
+
    source env/bin/activate  # On Linux/Mac
+
    .\env\Scripts\Activate.ps1 # On Powershell (if scripts execution permits in Powershell are needed,     execute: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser , accept with S and press Enter )
 
 
 3. Install dependencies:
    pip install -r requirements.txt
 
-4. Apply migrations and run the server:
+4. Configure environment variables:
+   Create a file called .env in the root of the project with the following contents:
+      SECRET_KEY=put-your-secret-key-here
+      EMAIL_HOST_USER=your-email@gmail.com
+      EMAIL_HOST_PASSWORD=your-app-password
+   You can generate a secret key with this command in Python:
+      from django.core.management.utils import get_random_secret_key
+      print(get_random_secret_key()) 
+
+5. Apply migrations, create superuser(optional) and run the server:
    python manage.py migrate
+   python manage.py createsuperuser
    python manage.py runserver
 
-5. Access in your browser:
+6. Access in your browser:
    http://127.0.0.1:8000/
 
 ---
