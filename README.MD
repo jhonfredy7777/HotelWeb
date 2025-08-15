@@ -30,13 +30,13 @@ The project was practically finished when I decided to make a repository and wor
 
 ## ⚙️ Installation
 
-1. Clone this repository:
+### Clone this repository:
    
    git clone https://github.com/jhonfredy7777/HotelWeb.git
    
 
-2. Inside the repository, create and activate a virtual environtment:
-   ### 1️ Create virtual environment
+### Inside the repository, create and activate a virtual environtment:
+   ####  Create virtual environment
 
 **On Windows (cmd or PowerShell)**:
 ```bat
@@ -50,7 +50,7 @@ python3 -m venv env
 
 ---
 
-   ### Activate virtual environment
+   #### Activate virtual environment
 
 **On Command Prompt (cmd)**:
 ```bat
@@ -79,27 +79,36 @@ source env/bin/activate
 
 
 
-3. Install dependencies:
+### Install dependencies:
+```
    pip install -r requirements.txt
+```   
 
-4. Configure environment variables:
+### Configure environment variables:
    Create a file called .env in the root of the project with the following contents:
+```
       SECRET_KEY=put-your-secret-key-here
       EMAIL_HOST_USER=your-email@gmail.com
-      EMAIL_HOST_PASSWORD=your-app-password
-   You can generate a secret key with this command in Python:
+      EMAIL_HOST_PASSWORD=your-app-password 
+```
+   >You can generate a secret key with this command in Python:
+   ```
       from django.core.management.utils import get_random_secret_key
       print(get_random_secret_key())
-      - if using gitbash: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
- 
-
-5. Apply migrations, load rooms data, create superuser(optional) and run the server:
+   ```
+   >if using gitbash: 
+   ```
+   python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+   ```
+### Apply migrations, load rooms data, create superuser(optional) and run the server:
+```
    python manage.py migrate
    python manage.py loaddata rooms.json
    python manage.py createsuperuser
    python manage.py runserver
+```   
 
-6. Access in your browser:
+### Access in your browser:
    http://127.0.0.1:8000/
 
 ---
