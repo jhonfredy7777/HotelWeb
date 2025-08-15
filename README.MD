@@ -28,7 +28,7 @@ The project was practically finished when I decided to make a repository and wor
 
 ---
 
-## ⚙️ Instalation
+## ⚙️ Installation
 
 1. Clone this repository:
    
