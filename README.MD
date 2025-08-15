@@ -35,14 +35,48 @@ The project was practically finished when I decided to make a repository and wor
    git clone https://github.com/jhonfredy7777/HotelWeb.git
    
 
-2. Create and activate a virtual environtment:
-   python -m venv env
+2. Inside the repository, create and activate a virtual environtment:
+   ### 1️ Create virtual environment
 
-   env\Scripts\activate      # On Windows
+**On Windows (cmd or PowerShell)**:
+```bat
+python -m venv env
+```
 
-   source env/bin/activate  # On Linux/Mac
+**On Git Bash / Linux / Mac**:
+```bash
+python3 -m venv env
+```
 
-   .\env\Scripts\Activate.ps1 # On Powershell (if scripts execution permits in Powershell are needed,     execute: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser , accept with S and press Enter )
+---
+
+   ### Activate virtual environment
+
+**On Command Prompt (cmd)**:
+```bat
+.\env\Scripts\activate.bat
+```
+
+**On Git Bash**:
+```bash
+source env/Scripts/activate
+```
+
+**On Linux/Mac**:
+```bash
+source env/bin/activate
+```
+
+**On PowerShell**:
+```powershell
+.\env\Scripts\Activate.ps1
+```
+> 💡 If script execution is restricted in PowerShell, run:
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+> Then accept with `S` and press Enter.
+
 
 
 3. Install dependencies:
@@ -55,10 +89,13 @@ The project was practically finished when I decided to make a repository and wor
       EMAIL_HOST_PASSWORD=your-app-password
    You can generate a secret key with this command in Python:
       from django.core.management.utils import get_random_secret_key
-      print(get_random_secret_key()) 
+      print(get_random_secret_key())
+      - if using gitbash: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+ 
 
-5. Apply migrations, create superuser(optional) and run the server:
+5. Apply migrations, load rooms data, create superuser(optional) and run the server:
    python manage.py migrate
+   python manage.py loaddata rooms.json
    python manage.py createsuperuser
    python manage.py runserver
 

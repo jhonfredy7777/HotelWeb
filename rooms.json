@@ -1,0 +1,422 @@
+[
+  {
+    "model": "reservation.room",
+    "pk": 1,
+    "fields": {
+      "number": 101,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 2,
+    "fields": {
+      "number": 102,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 3,
+    "fields": {
+      "number": 103,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 4,
+    "fields": {
+      "number": 104,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 5,
+    "fields": {
+      "number": 105,
+      "category": "standard",
+      "price": "100.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 6,
+    "fields": {
+      "number": 106,
+      "category": "deluxe",
+      "price": "290.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 7,
+    "fields": {
+      "number": 107,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 8,
+    "fields": {
+      "number": 108,
+      "category": "suite",
+      "price": "170.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 9,
+    "fields": {
+      "number": 109,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 10,
+    "fields": {
+      "number": 110,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 11,
+    "fields": {
+      "number": 201,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 12,
+    "fields": {
+      "number": 202,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 13,
+    "fields": {
+      "number": 203,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 14,
+    "fields": {
+      "number": 204,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 15,
+    "fields": {
+      "number": 205,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 16,
+    "fields": {
+      "number": 206,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 17,
+    "fields": {
+      "number": 207,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 18,
+    "fields": {
+      "number": 208,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 19,
+    "fields": {
+      "number": 209,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 20,
+    "fields": {
+      "number": 210,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 21,
+    "fields": {
+      "number": 211,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 22,
+    "fields": {
+      "number": 212,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 23,
+    "fields": {
+      "number": 213,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 24,
+    "fields": {
+      "number": 214,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  },
+    {
+    "model": "reservation.room",
+    "pk": 25,
+    "fields": {
+      "number": 301,
+      "category": "standard",
+      "price": "95.00",
+      "beds": 1,
+      "available": true,
+      "livingroom": "rooms/livingroom/room101.webp",
+      "kitchen": "rooms/kitchen/room101.jpg",
+      "bathroom": "rooms/bathroom/room101.jpg",
+      "bedroom": "rooms/bedroom/room101.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 26,
+    "fields": {
+      "number": 302,
+      "category": "deluxe",
+      "price": "300.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room102.webp",
+      "kitchen": "rooms/kitchen/room102.jpg",
+      "bathroom": "rooms/bathroom/room102.jpg",
+      "bedroom": "rooms/bedroom/room102.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 27,
+    "fields": {
+      "number": 303,
+      "category": "suite",
+      "price": "120.00",
+      "beds": 2,
+      "available": true,
+      "livingroom": "rooms/livingroom/room103.jpg",
+      "kitchen": "rooms/kitchen/room103.jpg",
+      "bathroom": "rooms/bathroom/room103.webp",
+      "bedroom": "rooms/bedroom/room103.jpg"
+    }
+  },
+  {
+    "model": "reservation.room",
+    "pk": 28,
+    "fields": {
+      "number": 304,
+      "category": "suite",
+      "price": "150.00",
+      "beds": 3,
+      "available": true,
+      "livingroom": "rooms/livingroom/room104.jpg",
+      "kitchen": "rooms/kitchen/room104.jpg",
+      "bathroom": "rooms/bathroom/room104.jpg",
+      "bedroom": "rooms/bedroom/room104.jpg"
+    }
+  }
+]
